@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Date</title>
+    <script>
+      var d = prompt("Enter the date in YYYY-MM-DD format");
+      var msec = Date.parse(d);
+      var date = new Date(msec);
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      if(date.getDate()==1)
+        var tag = "st";
+      else if(date.getDate()==2)
+        var tag = "nd";
+     else if(date.getDate()==3)
+        var tag = "rd";
+     else
+        var tag = "th";
+      if(Date.parse(d))
+         var date_string = "It is "+days[date.getDay()]+", "+date.getDate()+tag+" "+months[date.getMonth()]+" "+date.getFullYear();
+      else
+         var date_string = "Wrong date";
+      year = date.getFullYear();
+      if(year%100==0){
+        if(year%400)
+           var flag = 1;
+        else
+           var flag = 0;
+           }
+      else if(year%4==0)
+           var flag = 1;
+      if(flag)
+        var leap = "Leap year";
+      else
+        var leap = "Not a Leap year";
+
+    </script>
+  </head>
+  <body>
+    <h1 id="Date">Date will be displayed here</h1>
+    <h1 id="Leap">What kind of year is it?</h1>
+    <script>
+      document.getElementById("Date").innerHTML = date_string;
+      document.getElementById("Leap").innerHTML = leap;
+    </script>
+  </body>
+</html>

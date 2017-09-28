@@ -1,0 +1,54 @@
+<!--JS Object Oriented Programming
+not:JS is case sensitive
+In Js everything is treated as an object
+document is an object which represents the webpage
+
+var obj_name = {prop1:val1,prop2:val2,........}
+obj_name.prop1
+obj_name.prop2
+-->
+
+<html>
+<head>
+  <title>Objects in JS</title>
+</head>
+<body>
+  <script>
+     //First method
+     var obj1 = {type:"Fruit",name:"Cherry",color:"Red",sweetness:9,
+                        fun1: function(){alert("Hello!!");}};
+     alert(obj1.type);
+    obj1.fun1();
+    alert(typeof obj1);//Its of type object and it is not a primitive type(i.e it can be subdivided to  hold  other types)
+
+    //Second method
+    var obj2 = {};
+    obj2.type = "Fruit";
+    obj2.name = "Lemon";
+    obj2.color="Yellow";
+    alert(obj2.color);
+
+    //JS allows us to add new properties for an object anywhere within the program(i.e it is not strictly object oriented like java or C++,where we have to add new properties inside the class template)
+
+    obj1.addnew = "Random";
+
+    //Third method
+     function fruit(type,name,color,sweetness){
+       this.type = type;
+       this.name = name;
+       this.color = color;
+       this.sweetness = sweetness;
+     }
+     var obj3 =  fruit("Fruit","Mango","Yellow",10);
+     alert(typeof obj3);
+     var obj4 = fruit("Fruit","Mango","Yellow",8);
+     var obj5 = fruit("Fruit","Mango","Yellow",10);
+     alert(window.sweetness);//if obj is defined without new keyword, the object will fall under windows...if there are two objects without new keyword, the latest obj definition will fall under windows
+
+     //window() == all the methods written inside the script tag are added under window object. So all methods and vars can be accessed using window.prop1
+     var a = 6
+     alert(window.a);
+
+  </script>
+</body>
+</html>

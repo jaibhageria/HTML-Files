@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Image Toggle</title>
+</head>
+<body>
+  <h1 align ="center">TOGGLE</h1>
+  <img src="messi.jpg" width="500" height="500" id="messi" style = "display:block;margin:auto;"/>
+  <div>
+    <input type="button" onclick="imgToggler.toggle()" value="Toggle" style = "display:block;margin:auto;" />
+  </div>
+  <script>
+
+var imgToggler = {}
+imgToggler.toggle = function()
+                                      {
+                                        var imgEl = document.getElementById("messi")
+                                        var cursrc = imgEl.getAttribute("src")
+                                        if(cursrc == "messi.jpg")
+                                        {
+                                          imgEl.setAttribute("src","Screenshot (6).png")
+                                        }
+                                        else
+                                          {
+                                            imgEl.setAttribute("src","messi.jpg")
+                                          }
+                                        }
+                                      
+
+//var i = 0
+/*function fun1(){
+  var el = document.getElementById('messi');
+  if(i%2 == 0)
+    el.setAttribute("src","Screenshot (6).png")
+ else {
+    el.setAttribute("src","messi.jpg")
+ }
+i+=1;
+}*/
+
+  </script>
+</body>
+</html>

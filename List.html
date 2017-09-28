@@ -1,0 +1,43 @@
+<!--Swap two different lists elements dynamically-->
+<html>
+<head>
+  <title>List Swap</title>
+
+</head>
+<body>
+  <div>
+    <input type="button" onclick="fun1()" value="InsertBefore" />
+    <input type="button" onclick="fun2()" value="Swap" />
+  </div>
+  <h3>List 1</h3>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+<h3>List 2</h3>
+<ul id="List2">
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+</ul>
+<script>
+
+  function fun1(){
+    var el = document.querySelectorAll("li");
+    var val = prompt("Enter element before which you want to insert")
+    for(i in el){
+      if(el[i].innerHTML == val){
+        var newEl = document.createElement("li");
+        newEl.innerHTML = "New Text";
+        document.querySelector("ul#List2").insertBefore(newEl,el[i]);
+      }
+
+    }
+  }
+
+</script>
+</body>
+</html>

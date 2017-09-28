@@ -1,0 +1,85 @@
+<!--Document Object Model
+          Browser parses the html document character by character and when it encounters a valid html element, corresponding
+          to that valid html element it will create an object(i.e. with properties and methods).
+          There will be child-parent relationships amongst elements  according to the page structure.(i.e, for example head comes under html, and title comes under head)
+          Hence, basically the browser will create a tree data structure of these html element objects.
+          This allows us to dynamically modify elements on the webpage using javascript.
+          API-Application Programming Interface , interface between two systems(software and operating system). DOM is an API between JS and Html
+          ** if we modify a DOM, only the DOM tree gets modified...the html code remains the same as original.
+          DOM binds html/css and JS which gives us to power to modify and maintain webpages dynamically.-->
+
+
+<!--Creating elements-adds new elements to the DOM
+          document.createElement("p");
+          document.createElement("img");
+          this func returns an object which has to be stored in a var.
+          var el  = document.createElement("p");
+          el.innerHTML = "Hello"; OR
+          el.textContent = "Hello";       ==>allows us to modify contents of the element .
+          document.body.appendChild(el);==>adds the new element to the end of the body(makes it one the child of the body). Makes it the last child.
+          document.body.insertBefore(el,bel);==>inserts element stored as el before the element stored as 'bel' in the html page.
+          document.body.removeChild(el);==>get the element to be removed using document.getElementById() and store it as var.
+        document.getElementById()
+         document.querySelector()==> The same query selectors as CSS can be used (ex: #id OR .class, etc.)
+
+
+         var list = document.querySelectorAll("li")==>It creates a iterable variable list with all "li" elements in the whole document
+         for(i in list)
+       {
+         list[i].innerHTML = "LOL";
+         }
+       Ctrl+shif+I = => Open console window in chrome
+
+      for(i in list){
+      if(list[i].innerHTML==val){
+      var newEl = document.createElement("li")
+      newEl.innerHTML = "NewText"
+      document.querySelector("ul").insertBefore(newEl);
+    }
+    }             -->
+
+
+    <!--
+
+    -->
+
+<html>
+  <head>
+    <title>DOMs</title>
+  </head>
+  <body>
+    <div>
+    <input type="button" onclick="fun1()" value = "Create paragraph" />
+    <input type="button" onclick="fun2()" value = "Create Image" />
+    <input type="button" onclick="fun3()" value="Create link" />
+  </div>
+      <script>
+        var el = document.createElement("p");
+        alert(el)
+        document.body.appendChild(el);
+        el.innerHTML = "Hello"
+
+        function fun1(){
+          var el = document.createElement("p");
+          el.innerHTML = "I am a paragraph";
+          document.body.appendChild(el);
+        }
+
+
+                function fun2(){
+                  var el = document.createElement("img");
+                  el.setAttribute("src","messi.jpg");
+                  document.body.appendChild(el);
+                }
+
+
+                        function fun3(){
+                          var el = document.createElement("a");
+                          el.setAttribute("href","www.google.com")
+                          el.textContent = "Google";
+                          document.body.appendChild(el);
+                        }
+
+      </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>ShowContent</title>
+</head>
+<body>
+  <h1>Show Content</h1>
+  <ul>
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+  <li>d</li>
+  </ul>
+  <input type="button" onclick="obj.show()" value="Display" />
+  <script>
+
+  var obj = {}
+  obj.show = function(){
+          var list = document.getElementsByTagName("li");
+          for(i=0;i<list.length;i++){
+            alert(list[i].innerHTML);
+          }
+  }
+
+  </script>
+</body>
+</html>

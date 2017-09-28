@@ -1,0 +1,76 @@
+<html>
+<!--script tag can appear anywhere in html-->
+<!--preferably link external JS file because scripting in head will not act on tags defined inside body-->
+<!--alert() is used to display a msg  as a pop-up-->
+<!--prompt() is used to ask a question  Use , "" to specify default value it will return the value typed in-->
+<!--confirm() gets a yes or no answer from the user-->
+<!--variables
+
+interpreter assumes the type of the variable depending on its value
+JS is a dynamically typed langage
+JS is a weakly typed language because the value given to a variable ca
+use 'var' to declare a variable
+datatypes=number,string,boolean,null,undefined are primitive datatypes
+there is no differentiation for numbers....all decimals,integers,floats etc. are all treated as numbers under the same umbrella
+all numbers are stored in 64bit IEEE format
+
+
+-->
+<!--
+operators in JS:
+Arithmetic:+,-
+Increment/Decrement
+Assignment
+Bitwise:^(XOR),|(OR),&(AND),>>(right shift is like divide by 2),<<(left shift is multiply by 2)
+Logical
+Relational: ===(strictly equal to), !==(strictly not equal)
+
+
+-->
+<head>
+<title>JS1</title>
+<style></style>
+<script>
+     alert("Hello, World!");
+     var a=10;
+     b=20;//both the above ways of declarations are correct but there is a slight difference
+     alert(typeof c);//returns type as undefined because c is not defined anywhere in the program
+     var c;//still type will be undefined until it is initialised
+     b = null;//typeof is object    null is intentional by user and undefined is by the engine(unintentionally)
+     var num = parseInt(prompt("Enter a number"));
+     document.write(num);
+     var color = prompt("Enter a Color : ");
+     switch(color){
+       case "Red":
+          document.write("<style> body{background-color:red;} </style>");
+          case "Blue":
+             document.write("<style> body{background-color:blue;} </style>");
+             case "Green":
+                document.write("<style> body{background-color:green;} </style>");
+     }
+</script>
+</head>(
+<body>
+  <script>
+    name = prompt("What is your Name?","name")
+    if(name=="null")
+    {
+      alert("EXITING");
+    }
+    else{
+     document.write(name)//used to print on html
+     document.write("<h1 style=\"text-align:center   \">"+name+"</h1>");
+
+
+     confirm("Are you sure your name is "+name+" ?")
+     x='I am good';
+     y="I am better";//both variables are string types single or double qoute are same
+     alert(typeof x);
+     alert(typeof y);
+     a=true;
+     alert(typeof a);
+   }
+  </script>
+  <script src="P1.js"></script>
+</body>
+</html>
